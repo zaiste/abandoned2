@@ -1,18 +1,21 @@
-export const LatestProducts = /* GraphQL */`
-  query LatestProducts {
-    products(first: 12, channel: "default-channel") {
-      edges {
-        node {
-          id
-          name
-          thumbnail {
-            url
-          }
-          category {
-            name
+export const AbandonedCarts = /* GraphQL */`
+  query AbandonedCarts {
+    checkouts(first: 10) {
+    edges {
+      node {
+        id
+        lines {
+          variant {
+            product {
+              name
+              thumbnail {
+                url
+              }
+            }
           }
         }
       }
     }
+  }
   }
 `;
